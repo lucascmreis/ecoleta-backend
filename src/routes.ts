@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { request, response } from 'express';
 import multer from 'multer';
 import multerConfig from './config/multer';
 import {celebrate, Joi} from 'celebrate';
@@ -35,6 +35,12 @@ routes.post('/points',
 );
 routes.get('/points', pointsController.index);
 routes.get('/points/:id', pointsController.show );
+routes.get('/test', (request, response) => {
+    response.json({message:"TEste Ok"!})
+
+    return console.log("Cheguei ate aqui! ")
+    
+})
 
 
 export default routes;
