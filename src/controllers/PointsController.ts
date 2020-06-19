@@ -22,7 +22,7 @@ export default class PointController {
     const serializedPoints = points.map(point => {
         return {
           ...point,
-          image_url: `http://192.168.15.14:3333/uploads/${point.image}`,
+          image_url: `${process.env.UPLOAD_IMAGE_URL}/uploads/${point.image}`,
         };
     });
     console.log(serializedPoints)
@@ -40,7 +40,7 @@ export default class PointController {
 
     const serializedPoint= {
       ...point,
-      image_url: `http://192.168.15.14:3333/uploads/${point.image}`,
+      image_url: `${process.env.UPLOAD_IMAGE_URL}/uploads/${point.image}`,
     };
 
     const item = await knex('items')
